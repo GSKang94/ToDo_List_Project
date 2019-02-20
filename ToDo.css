@@ -60,6 +60,10 @@ input, textarea {
   background-color : #d9d9d9;
 }
 
+.fa-trash-alt{
+  color: red;
+}
+
 /*.hide {
   opacity: 0;
   transition: opacity 1000ms;

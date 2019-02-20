@@ -4,12 +4,7 @@ var li = document.querySelector("li");
 var ul = document.querySelector("ul");
 var input = document.querySelector("input[type='text']");
 
-/* Without dynamic elements
-for (var i = 0; i < items.length; i++) {
-	items[i].addEventListener("click", function(){
-		this.classList.toggle("tDisplay")
-	})
-}*/
+
 
 // With dynamic elements
 ul.addEventListener("click", setCompleted);
@@ -29,18 +24,10 @@ ul.addEventListener("click", setDeleted);
 function setDeleted(e) {
 	if (e.target.tagName.toLowerCase() === 'span') {
 		e.target.parentNode.remove();
-		e.stopPropagation(); 
+		// e.stopPropagation(); 
 	}
 }
 
-/* without dynamic elements.
-var spans = document.querySelectorAll("span");
-
-for (var i = 0; i < spans.length; i++) {
-	spans[i].addEventListener("click", function(){
-		this.parentNode.remove()
-	})
-}*/
 
 // add new todo to the list upon hitting enter key.
 
@@ -48,7 +35,7 @@ input.addEventListener("keydown", function(){
 	if (event.keyCode === 13) {
 		var val = this.value;
 		newItem = document.createElement("li");
-		newItem.innerHTML = "<span> X </span>" + val;
+		newItem.innerHTML = "<span> <i class='fas fa-trash-alt'></i> </span>" + val;
 		ul.appendChild(newItem)
 		input.value = "";
 	}
