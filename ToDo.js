@@ -22,8 +22,11 @@ ul.addEventListener("click", setDeleted);
 
 function setDeleted(e) {
 	if (e.target.tagName.toLowerCase() === 'i') {
-		e.target.parentNode.parentNode.remove();
-		// e.stopPropagation(); 
+		e.target.parentNode.parentNode.classList.add("deleted")
+		setTimeout(function(){
+			e.target.parentNode.parentNode.remove();
+			// e.stopPropagation(); 
+		},1000);
 	}
 }
 

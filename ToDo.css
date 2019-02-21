@@ -56,6 +56,22 @@ ul{
 	color: grey;
 }
 
+.deleted{
+  animation: fade 1s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.50;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 input, textarea {
   background-color : #d9d9d9;
 }
@@ -64,24 +80,3 @@ input, textarea {
   color: red;
 }
 
-/*.hide {
-  opacity: 0;
-  transition: opacity 1000ms;
-}*/
-
-/*.fade { 
-  animation: fadein 2s;
-
-}
-@keyframes fadein {
-  from {
-    opacity:1;
-  }
-  50% {
-    opacity: 0;
-  }
-  to {
-    opacity:1;
-  }
-}
-*/
