@@ -47,12 +47,23 @@ for (var i = 0; i < spans.length; i++) {
 input.addEventListener("keydown", function(){
 	if (event.keyCode === 13) {
 		var val = this.value;
+		if(isInputValid(val) == false) return;
 		newItem = document.createElement("li");
 		newItem.innerHTML = "<span> X </span>" + val;
 		ul.appendChild(newItem)
 		input.value = "";
 	}
-})
+});
+
+// Input validator
+function isInputValid(input) {
+	if(input == "") {
+		alert("Input cannot be empty!");
+		return false;
+	} else {
+		return true;
+	}
+}
 
 // add effects.
 // add icons.
