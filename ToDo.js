@@ -26,7 +26,7 @@ function setDeleted(e) {
 		setTimeout(function(){
 			e.target.parentNode.parentNode.remove();
 			// e.stopPropagation(); 
-		},1000);
+		},500);
 	}
 }
 
