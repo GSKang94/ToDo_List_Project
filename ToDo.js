@@ -1,11 +1,9 @@
-// Toggle Item as done after clicking.
-
 var li = document.querySelector("li");
 var ul = document.querySelector("ul");
 var input = document.querySelector("input[type='text']");
+var plus = document.querySelector(".fa-plus")
 
-
-// With dynamic elements
+// Toggle Item as done after clicking.
 ul.addEventListener("click", setCompleted);
 
 function setCompleted(e) {
@@ -14,10 +12,7 @@ function setCompleted(e) {
 	}
 }
 
-
 // remove the todo after hitting trash icon.
-
-// With dynamic elements.
 ul.addEventListener("click", setDeleted);
 
 function setDeleted(e) {
@@ -31,7 +26,6 @@ function setDeleted(e) {
 }
 
 // add new todo to the list upon hitting enter key.
-
 input.addEventListener("keydown", function(){
 	if (event.keyCode === 13) {
 		var val = this.value;
@@ -40,4 +34,9 @@ input.addEventListener("keydown", function(){
 		ul.appendChild(newItem)
 		input.value = "";
 	}
+})
+
+// Toggle input field upon clicking plus button.
+plus.addEventListener("click", function(){
+	input.classList.toggle("hideInput")
 })
