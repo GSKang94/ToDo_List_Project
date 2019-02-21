@@ -24,6 +24,7 @@ div{
   margin-top: 45px;
 	/*padding: 0px;*/
 	background-color: #c6cfff;
+  /*border: 3px solid black;*/
 }
 
 ul{
@@ -42,12 +43,18 @@ li:nth-of-type(even){
   background-color: #d9d9d9;
 }
 input{
-  /*margin: 0px;*/
-  /*padding: 0px;*/
-  width: 100%;
+  padding-left: 20px;
+  width: 330px;
   height: 35px;
   border: none;
   font-size: 100%;
+  /*border: rgba(0,0,0,0);*/
+
+}
+
+input:focus{
+  border: 1px solid #e88a1a;
+  outline: none;
 }
 
 span{
@@ -57,6 +64,7 @@ span{
   margin-right: 10px;
   text-align: center;
   width: 0;
+  height: 100%;
 }
 
 li:hover span{

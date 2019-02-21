@@ -38,5 +38,8 @@ input.addEventListener("keydown", function(){
 
 // Toggle input field upon clicking plus button.
 plus.addEventListener("click", function(){
-	input.classList.toggle("hideInput")
+	input.classList.toggle('deleted')
+	setTimeout(function() {
+		input.classList.toggle("hideInput")
+	}, 400);
 })
