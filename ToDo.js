@@ -5,7 +5,6 @@ var ul = document.querySelector("ul");
 var input = document.querySelector("input[type='text']");
 
 
-
 // With dynamic elements
 ul.addEventListener("click", setCompleted);
 
@@ -16,18 +15,17 @@ function setCompleted(e) {
 }
 
 
-// remove the todo after hitting X.
+// remove the todo after hitting trash icon.
 
 // With dynamic elements.
 ul.addEventListener("click", setDeleted);
 
 function setDeleted(e) {
-	if (e.target.tagName.toLowerCase() === 'span') {
-		e.target.parentNode.remove();
+	if (e.target.tagName.toLowerCase() === 'i') {
+		e.target.parentNode.parentNode.remove();
 		// e.stopPropagation(); 
 	}
 }
-
 
 // add new todo to the list upon hitting enter key.
 
@@ -40,7 +38,3 @@ input.addEventListener("keydown", function(){
 		input.value = "";
 	}
 })
-
-// add effects.
-// add icons.
-// style the app.
