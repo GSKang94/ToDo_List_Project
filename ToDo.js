@@ -1,17 +1,9 @@
-// Toggle Item as done after clicking.
-
 var li = document.querySelector("li");
 var ul = document.querySelector("ul");
 var input = document.querySelector("input[type='text']");
+var plus = document.querySelector(".fa-plus")
 
-/* Without dynamic elements
-for (var i = 0; i < items.length; i++) {
-	items[i].addEventListener("click", function(){
-		this.classList.toggle("tDisplay")
-	})
-}*/
-
-// With dynamic elements
+// Toggle Item as done after clicking.
 ul.addEventListener("click", setCompleted);
 
 function setCompleted(e) {
@@ -20,36 +12,26 @@ function setCompleted(e) {
 	}
 }
 
-
-// remove the todo after hitting X.
-
-// With dynamic elements.
+// remove the todo after hitting trash icon.
 ul.addEventListener("click", setDeleted);
 
 function setDeleted(e) {
-	if (e.target.tagName.toLowerCase() === 'span') {
-		e.target.parentNode.remove();
-		e.stopPropagation(); 
+	if (e.target.tagName.toLowerCase() === 'i') {
+		e.target.parentNode.parentNode.classList.add("deleted")
+		setTimeout(function(){
+			e.target.parentNode.parentNode.remove();
+			// e.stopPropagation(); 
+		},500);
 	}
 }
 
-/* without dynamic elements.
-var spans = document.querySelectorAll("span");
-
-for (var i = 0; i < spans.length; i++) {
-	spans[i].addEventListener("click", function(){
-		this.parentNode.remove()
-	})
-}*/
-
 // add new todo to the list upon hitting enter key.
-
 input.addEventListener("keydown", function(){
 	if (event.keyCode === 13) {
 		var val = this.value;
 		if(isInputValid(val) == false) return;
 		newItem = document.createElement("li");
-		newItem.innerHTML = "<span> X </span>" + val;
+		newItem.innerHTML = "<span> <i class='fas fa-trash-alt'></i> </span>" + val;
 		ul.appendChild(newItem)
 		input.value = "";
 	}
@@ -65,6 +47,10 @@ function isInputValid(input) {
 	}
 }
 
-// add effects.
-// add icons.
-// style the app.
+// Toggle input field upon clicking plus button.
+plus.addEventListener("click", function(){
+	input.classList.toggle('deleted')
+	setTimeout(function() {
+		input.classList.toggle("hideInput")
+	}, 400);
+})
