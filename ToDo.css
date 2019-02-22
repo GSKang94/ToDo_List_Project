@@ -2,53 +2,76 @@ body{
 	background: #780206;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: 0px;
+  padding: 0px;
 }
 
-h1,ul{
-	color: #e88a1a;
-}
 
-.title {
-	font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+h1{
+  color: #e88a1a;
+  margin: 0px;
+  padding: 10px 20px;
+  /*padding-left:10px;*/
+  /*padding-right: 10px;*/
+  background-color: #141414;
+  /*height: 100%*/
+  font-size: 24px;
 }
 
 div{
-	width: 300px;
-	margin: 70px auto;
-	border: 0.5px solid #d9d9d9;
-	padding: 50px;
-	background-color: #141414;
+	width: 350px;
+	margin: 0px auto;
+  margin-top: 45px;
+	/*padding: 0px;*/
+	background-color: #c6cfff;
+  /*border: 3px solid black;*/
 }
 
 ul{
 	list-style: none;
-	margin: 0;
-	padding: 20px 0px 0px 0px;
+	margin: 0px;
+	padding: 0px;
+  line-height: 34px;
+  font-size: 100%;
 }
 
-.align-input {
-	float: left;
-	margin: 16px 16px;
+li{
+  height: 35px;
 }
 
-
-.round-button {
-    display:block;
-    width:50px;
-    height:50px;
-    line-height:50px;
-    border: 2px solid #f5f5f5;
-    border-radius: 50%;
-    color:#f5f5f5;
-    text-align:center;
-    text-decoration:none;
-    background: #27660a;
-    box-shadow: 0 0 3px gray;
-    font-size:20px;
-    font-weight:bold;
+li:nth-of-type(even){
+  background-color: #d9d9d9;
 }
-.round-button:hover {
-    background: #262626;
+input{
+  padding-left: 20px;
+  width: 330px;
+  height: 35px;
+  border: none;
+  font-size: 100%;
+  /*border: rgba(0,0,0,0);*/
+
+}
+
+input:focus{
+  border: 1px solid #e88a1a;
+  outline: none;
+}
+
+span{
+  display: inline-block;
+  opacity: 0;
+  transition: 0.2s linear;
+  margin-right: 10px;
+  text-align: center;
+  width: 0;
+  height: 100%;
+}
+
+li:hover span{
+  opacity: 1.0;
+  width: 35px;
+  background-color: #ff5959;
+  margin-right: 10px;
 }
 
 .completed{
@@ -56,28 +79,35 @@ ul{
 	color: grey;
 }
 
+.deleted{
+  animation: fade 0.5s;
+}
+
+.hideInput{
+  display: none;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.50;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 input, textarea {
   background-color : #d9d9d9;
 }
 
-/*.hide {
-  opacity: 0;
-  transition: opacity 1000ms;
-}*/
-
-/*.fade { 
-  animation: fadein 2s;
-
+.fa-trash-alt{
+  color: white;
 }
-@keyframes fadein {
-  from {
-    opacity:1;
-  }
-  50% {
-    opacity: 0;
-  }
-  to {
-    opacity:1;
-  }
+
+.fa-plus{
+  float: right;
+  padding-top: 3px;
 }
-*/
